@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Protein Calories Counter",
+    "slug": "protein-calories-counter",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.jpeg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/adaptive-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.trimeas.proteincaloriescounter"
+    },
+    "web": {
+      "favicon": "./assets/adaptive-icon.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "eb4f5c2d-4515-46e9-965c-52d0e4fdbb32"
+      }
+    }
+  }
+}
