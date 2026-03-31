@@ -1,6 +1,6 @@
 import tw from 'twrnc';
 import React, { useState, useMemo } from 'react';
-import { View, ScrollView, Alert } from 'react-native';
+import { View, ScrollView, Alert, Image, Linking, TouchableOpacity, Pressable } from 'react-native';
 import { Text, useTheme, IconButton, Card, Portal, Dialog, Button, TextInput } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 import { useStore } from '../store/useStore';
@@ -18,6 +18,7 @@ export default function DashboardScreen() {
   const [isDialogVisible, setDialogVisible] = useState(false);
   const [newMealName, setNewMealName] = useState('');
   const [newMealTime, setNewMealTime] = useState('');
+  const [logoTaps, setLogoTaps] = useState(0);
 
   const { calorieGoal, proteinGoal, configuredMeals, updateMealConfig } = useStore();
   const { dailyLogs } = useDataStore();
@@ -88,11 +89,31 @@ export default function DashboardScreen() {
   const textMuted = isDark ? tw`text-zinc-400` : tw`text-slate-500`;
 
   return (
-    <View style={[tw`flex-1`, bgRoot]}>
+    <Pressable style={[tw`flex-1`, bgRoot]} onPress={() => setLogoTaps(0)}>
       <ScrollView contentContainerStyle={{ padding: 16 }}>
         {/* App Header */}
         <View style={tw`flex-row justify-between items-center mt-12 mb-2`}>
-          <Text variant="headlineSmall" style={[tw`font-extrabold`, textPrimary]}>TriMeas</Text>
+          <View style={tw`items-start`}>
+            <TouchableOpacity 
+              activeOpacity={0.7}
+              onPress={() => {
+                if (logoTaps === 0) {
+                  setLogoTaps(1);
+                  setTimeout(() => setLogoTaps(0), 4000); // Auto-reset after 4s
+                } else {
+                  Linking.openURL('https://thomasrojas-links.vercel.app/');
+                  setLogoTaps(0);
+                }
+              }}
+            >
+              <Image source={require('../../assets/ico2.png')} style={{ width: 50, height: 50, borderRadius: 100 }} />
+            </TouchableOpacity>
+            {logoTaps === 1 && (
+              <Text variant="labelSmall" style={[tw`mt-1 font-bold text-orange-500`]}>
+                ¡Toca de nuevo para visitar mi página!
+              </Text>
+            )}
+          </View>
           <View style={tw`flex-row`}>
             <IconButton icon="calendar-month" iconColor={textPrimary.color?.toString()} size={24} onPress={() => navigation.navigate('History')} />
             <IconButton icon="food-apple" iconColor={textPrimary.color?.toString()} size={24} onPress={() => navigation.navigate('ManageFoods')} />
@@ -206,6 +227,6 @@ export default function DashboardScreen() {
           </Dialog.Actions>
         </Dialog>
       </Portal>
-    </View>
+    </Pressable>
   );
 }
