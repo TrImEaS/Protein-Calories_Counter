@@ -14,18 +14,18 @@ export interface CustomFood {
 
 export interface MealLogItem {
   id: string;
-  foodId: string; // references CustomFood.id
-  name: string;   // copied at the time of logging
+  foodId: string;
+  name: string;  
   calories: number;
   protein: number;
   sugar?: number;
   portions: number;
-  timestamp: string; // ISO string
+  timestamp: string; 
 }
 
 export interface DailyLog {
-  date: string; // YYYY-MM-DD
-  mealId: string; // e.g. "1" for Breakfast
+  date: string;
+  mealId: string;
   items: MealLogItem[];
 }
 
@@ -90,7 +90,6 @@ export const useDataStore = create<DataState>()(
       deleteCustomFood: (id) =>
         set((state) => ({
           customFoods: state.customFoods.filter((f) => f.id !== id),
-          // Note: we could remove it from logs, but usually we just keep the logged item since we copy properties
         })),
 
       logFoodToMeal: (date, mealId, food) =>

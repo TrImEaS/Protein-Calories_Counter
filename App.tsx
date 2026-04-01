@@ -21,10 +21,8 @@ export default function App() {
 
   const isDark = storedTheme === 'dark' || (storedTheme === 'system' && colorScheme === 'dark');
 
-  // Set twrnc color scheme synchronously BEFORE render — no useEffect, no loop
   tw.setColorScheme(isDark ? 'dark' : 'light');
 
-  // Language: only fire when storedLanguage actually changes
   const prevLang = useRef(storedLanguage);
   useEffect(() => {
     if (prevLang.current !== storedLanguage) {

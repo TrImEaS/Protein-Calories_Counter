@@ -12,7 +12,6 @@ export default function HistoryScreen() {
   const { calorieGoal, proteinGoal } = useStore();
 
   const historyData = useMemo(() => {
-    // Group logs by date
     const grouped: Record<string, { cals: number, pro: number }> = {};
     
     dailyLogs.forEach(log => {
@@ -21,7 +20,6 @@ export default function HistoryScreen() {
       grouped[log.date].pro += log.items.reduce((s, i) => s + i.protein, 0);
     });
 
-    // Create an array sorted by date descending
     return Object.keys(grouped).sort((a,b) => b.localeCompare(a)).map(date => {
       const data = grouped[date];
       const calPercent = Math.round((data.cals / calorieGoal) * 100);

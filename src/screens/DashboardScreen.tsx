@@ -82,7 +82,6 @@ export default function DashboardScreen() {
 
   const isDark = theme.dark;
 
-  // Background and primary tinting logic (Vibrant design request)
   const bgRoot = isDark ? tw`bg-zinc-900` : tw`bg-slate-50`;
   const bgCard = isDark ? tw`bg-zinc-800` : tw`bg-white`;
   const textPrimary = isDark ? tw`text-white` : tw`text-slate-900`;
@@ -99,7 +98,7 @@ export default function DashboardScreen() {
               onPress={() => {
                 if (logoTaps === 0) {
                   setLogoTaps(1);
-                  setTimeout(() => setLogoTaps(0), 4000); // Auto-reset after 4s
+                  setTimeout(() => setLogoTaps(0), 4000); 
                 } else {
                   Linking.openURL('https://thomasrojas-links.vercel.app/');
                   setLogoTaps(0);

@@ -7,7 +7,7 @@ export type ThemeType = 'system' | 'light' | 'dark';
 export interface MealConfig {
   id: string;
   name: string;
-  defaultTime: string; // e.g. "08:00"
+  defaultTime: string;
 }
 
 export interface UserSettings {

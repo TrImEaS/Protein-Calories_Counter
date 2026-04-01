@@ -18,12 +18,10 @@ export default function AddMealFoodScreen() {
   
   const [scannerVisible, setScannerVisible] = useState(false);
 
-  // Portion Dialog State
   const [portionDialogVisible, setPortionDialogVisible] = useState(false);
   const [selectedFood, setSelectedFood] = useState<CustomFood | null>(null);
   const [portionInput, setPortionInput] = useState('1');
 
-  // Items currently in this specific meal
   const currentMealItems = dailyLogs.find(l => l.date === date && l.mealId === mealId)?.items || [];
 
   const filteredFoods = customFoods.filter(f => 
@@ -64,7 +62,7 @@ export default function AddMealFoodScreen() {
     setScannerVisible(false);
     const foundFood = customFoods.find(f => f.barcode === barcode);
     if (foundFood) {
-      setTimeout(() => startAddFood(foundFood), 500); // Wait for modal to close
+      setTimeout(() => startAddFood(foundFood), 500); 
     } else {
       Alert.alert(
         t('foodNotFound'),

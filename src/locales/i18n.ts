@@ -14,10 +14,10 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'es', // Force Spanish as default to fix the user's issue immediately
+    lng: 'es',  
     fallbackLng: 'es',
     interpolation: {
-      escapeValue: false, // React already does escaping
+      escapeValue: false,
     },
   });
 
