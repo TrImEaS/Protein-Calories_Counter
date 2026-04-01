@@ -14,11 +14,11 @@ Una aplicación potente y sencilla para seguir tus objetivos nutricionales, enfo
 
 ## 🤝 Filosofía del Proyecto
 
-Este proyecto nació simplemente como una **herramienta de uso propio** para resolver una necesidad personal. Decidimos compartirla con la **comunidad y amigos** para que cualquier persona que busque una solución similar pueda aprovecharla de forma directa y sencilla.
+Este proyecto nació simplemente como una **herramienta de uso propio** para resolver una necesidad personal. Decidi compartirla con la **comunidad y amigos** para que cualquier persona que busque una solución similar pueda aprovecharla de forma directa y sencilla.
 
 ## 🆓 ¡Totalmente Gratis!
 
-Esta aplicación es **100% gratuita**. Invitamos a cualquiera que la necesite a usarla, explorar el código y compartirla. Fue hecha para ayudar y para que la comunidad crezca.
+Esta aplicación es **100% gratuita**. Invito a cualquiera que la necesite a usarla, explorar el código y compartirla. Fue hecha para ayudar y para que la comunidad crezca.
 
 ## 🛠️ Tecnologías Utilizadas
 
