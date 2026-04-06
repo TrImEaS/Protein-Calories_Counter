@@ -33,7 +33,7 @@ export default function ManageFoodsScreen() {
 
       <FlatList
         data={customFoods}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item<any>) => item.id}
         contentContainerStyle={{ padding: 16 }}
         ListEmptyComponent={
           <View style={tw`items-center justify-center py-10`}>
